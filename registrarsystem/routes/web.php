@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\controllers\ProductController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,9 +16,3 @@ use App\Http\controllers\ProductController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/product/register',[ProductController::class,'register'])->name('product/register');
-Route::post('product.register',[ProductController::class,'store'])->name('product/register');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
