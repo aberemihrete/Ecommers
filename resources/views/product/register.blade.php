@@ -5,7 +5,7 @@
     <body>
     <center>
         <font color ="blue">
-        <h2>REGISTRATION FORM</h2>
+        <h2><i>REGISTRATION FORM</i></h2>
 </font>
      <form>
          <table>
