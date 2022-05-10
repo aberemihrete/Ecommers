@@ -1,9 +1,9 @@
 <?php
-
+use App\Models\Catagory;
 use App\Models\product;
 use Illuminate\Support\Facades\Route;
 use App\Http\controllers\productcontroller;
-
+use App\Http\Controllers\CatagoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,6 +30,9 @@ Route::post('/product/update',[ProductController::class,'update'])->name('produc
 Route::get('/product/delete/{id}', [ProductController::class, 'delete']);
 Route::get('/product/search/{id}', [ProductController::class, 'search'])->name('product/search');
 
+Route::get('/Catagory/register', [CatagoryController::class, 'register'])->name('Catagory/register');
+Route::post('/Catagory/register', [CatagoryController::class, 'store'])->name('Catagory/register');
+Route::get('/Catagory/list', [CatagoryController::class, 'get_all'])->name('Catagory/list');
 
 
 
