@@ -16,17 +16,17 @@ class ProductController extends Controller
     
     {
       $product =new product();
-      $product->id = $request->id;
+     $product->id = $request->id;
       $product->name = $request->name;
       $product->unit = $request->unit;
       $product->price = $request->price;
       $product->quantity = $request->quantity;
      $is_saved = $product->save();
     if($is_saved){
-    echo " YOUR DATA Record saved successfully.";
+    echo " data is saved successfully.";
                }
     else{
-     echo "Sorry, try again something went wrong.";
+     echo "try again something went wrong.";
        }
 
        
@@ -39,7 +39,7 @@ class ProductController extends Controller
     public function edit($id)
  {
  $product = Product::find($id);
- return view('product.edit', compact('product'));
+ return view('product/edit', compact('product'));
  }
  public function update(Request $request)
  {
@@ -64,6 +64,6 @@ class ProductController extends Controller
 public function search($id)
     {
      $product = Product::where('id',$id)->first();
-     return view('product.search', compact('product'));
+     return view('product/search', compact('product'));
     } 
   }
