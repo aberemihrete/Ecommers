@@ -35,5 +35,4 @@ Route::post('/Catagory/register', [CatagoryController::class, 'store'])->name('C
 Route::get('/Catagory/list', [CatagoryController::class, 'get_all'])->name('Catagory/list');
 Route::get('/Catagory/delete/{id}', [CatagoryController::class, 'delete']);
 Route::get('/Catagory/search/{id}', [CatagoryController::class, 'search'])->name('Catagory/search');
-Catagory::find(1);
 
