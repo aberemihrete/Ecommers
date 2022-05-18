@@ -1,19 +1,21 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
 @extends('layouts.app')
 @section('content')
 <div class="container">
  <div class="row justify-content-center">
  <div class="col-md-8">
  <div class="card">
- <div class="card-header">{{ __('Product  Edit') }}</div>
+ <div class="card-header">{{ ('PRODUCT EDIT') }}</div>
  <div class="card-body">
- <form method="POST" action="{{ route('product/update') }}"
->
+ <form method="POST" action="{{ route('product/update') }}">
  @csrf
+<input type="hidden" value="{{ $product->id }}" name ='id'>
  <div class="form-group row">
- <label for="name" class="col-md-4 col-formlabel text-md-right">{{ __('Product') }}</label>
+ <label for="name" class="col-md-4 col-form-label text-md-right">{{ ('name') }}</label>
  <div class="col-md-6">
- <input id="name" type="text" class="formcontrol @error('name') isinvalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="
-name" autofocus>
+ <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $product->name}}" required autocomplete="name" autofocus>
  @error('name')
  <span class="invalid-feedback" role="alert">
  <strong>{{ $message }}</strong>
@@ -21,24 +23,10 @@ name" autofocus>
  @enderror
  </div>
  </div>
- @csrf
  <div class="form-group row">
- <label for="id" class="col-md-4 col-formlabel text-md-right">{{ __('id') }}</label>
+ <label for="unit" class="col-md-4 col-form-label text-md-right">{{ ('unit') }}</label>
  <div class="col-md-6">
- <input id="id" type="text" class="formcontrol @error('id') isinvalid @enderror" name="id" value="{{ old('id') }}" required autocomplete="
-id" autofocus>
- @error('id')
- <span class="invalid-feedback" role="alert">
- <strong>{{ $message }}</strong>
- </span>
- @enderror
- </div>
- </div>
- <div class="form-group row">
- <label for="unit" class="col-md-4 col-formlabel text-md-right">{{ __('unit') }}</label>
- <div class="col-md-6">
- <input id="unit" type="text" class="formcontrol @error('unit') isinvalid @enderror" name="unit" value="{{ old('unit') }}" required autocomplete
-="unit">
+ <input id="unit" type="text" class="form-control @error('price') is-invalid @enderror" name="unit" value="{{ $product->unit }}" autocomplete="unit">
  @error('unit')
  <span class="invalid-feedback" role="alert">
  <strong>{{ $message }}</strong>
@@ -47,10 +35,9 @@ id" autofocus>
  </div>
  </div>
  <div class="form-group row">
- <label for="price" class="col-md-4 col-formlabel text-md-right">{{ __('price') }}</label>
+ <label for="price" class="col-md-4 col-form-label text-md-right">{{ ('price') }}</label>
  <div class="col-md-6">
- <input id="price" type="text" class="formcontrol @error('price') isinvalid @enderror" name="price" value="{{ old('price') }}" required autocomplete
-="price">
+ <input id="price" type="text" class="form-control @error('price') is-invalid @enderror" name="price" value="{{ $product->price }}" autocomplete="price">
  @error('price')
  <span class="invalid-feedback" role="alert">
  <strong>{{ $message }}</strong>
@@ -59,10 +46,9 @@ id" autofocus>
  </div>
  </div>
  <div class="form-group row">
- <label for="quantity" class="col-md-4 col-formlabel text-md-right">{{ __('quantity') }}</label>
+ <label for="quantity" class="col-md-4 col-form-label text-md-right">{{ ('quantity') }}</label>
  <div class="col-md-6">
- <input id="quantity" type="text" class="formcontrol @error('quantity') isinvalid @enderror" name="quantity" value="{{ old('quantity') }}" required autocomplete
-="quantity">
+ <input id="quantity" type="text" class="form-control @error('quantity') is-invalid @enderror" name="quantity" value="{{ $product->quantity }}" autocomplete="quantity">
  @error('quantity')
  <span class="invalid-feedback" role="alert">
  <strong>{{ $message }}</strong>
@@ -73,8 +59,8 @@ id" autofocus>
  <div class="form-group row mb-0">
  <div class="col-md-6 offset-md-4">
  <button type="submit" class="btn btn-primary">
- {{ __('Update') }}
- </button>
+     {{ ('Update') }}
+    </button>
  </div>
  </div>
  </form>

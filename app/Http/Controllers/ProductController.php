@@ -43,9 +43,7 @@ class ProductController extends Controller
  }
  public function update(Request $request)
  {
-  $request->validate([
-    'name' => 'required'
-    ]);
+  $request->validate(['name' => 'required']);
     $product= Product::find($request->id);
     $product->name = $request->name;
     $product->unit = $request->unit;
